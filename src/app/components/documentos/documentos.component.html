@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="col s12 l10 push-l1">
+    <table class="responsive-table centered">
+      <thead>
+        <tr>
+          <th>PLACA</th>
+          <th>CHASSI</th>
+          <th>RENAVAM</th>
+          <th>MODELO</th>
+          <th>MARCA</th>
+          <th>ANO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ds of documentos">
+          <td>{{ ds.placa }}</td>
+          <td>{{ ds.chassi }}</td>
+          <td>{{ ds.renavam }}</td>
+          <td>{{ ds.modelo }}</td>
+          <td>{{ ds.marca }}</td>
+          <td>{{ ds.ano }}</td>
+          <td>
+            <button
+              class="btn-floating btn-small blue modal-trigger"
+              data-target="modal1"
+              (click)="findById(ds.id)"
+            >
+              <i class="material-icons">edit</i>
+            </button>
+          </td>
+          <td>
+            <button class="btn-floating btn-small red" (click)="delete(ds)">
+              <i class="material-icons">delete</i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <div class="col s12">
+      <h6 class="center">Formulário de Edição</h6>
+    </div>
+    <div class="input-field col s12 l6">
+      <i class="material-icons prefix">chevron_right</i>
+      <input type="text" [(ngModel)]="dados.placa" name="placa" id="placa" required/>
+      <label for="placa" class="active">Placa</label>
+    </div>
+    <div class="input-field col s12 l6">
+      <i class="material-icons prefix">chevron_right</i>
+      <input type="text" [(ngModel)]="dados.chassi" name="chassi" id="chassi" required/>
+      <label for="chassi" class="active">Chassi</label>
+    </div>
+    <div class="input-field col s12 l6">
+      <i class="material-icons prefix">chevron_right</i>
+      <input type="text" [(ngModel)]="dados.renavam" name="renavam" id="renavam" required/>
+      <label for="renavam" class="active">Renavam</label>
+    </div>
+    <div class="input-field col s12 l6">
+      <i class="material-icons prefix">chevron_right</i>
+      <input type="text" [(ngModel)]="dados.modelo" name="modelo" id="modelo" required/>
+      <label for="modelo" class="active">Modelo</label>
+    </div>
+    <div class="input-field col s12 l6">
+      <i class="material-icons prefix">chevron_right</i>
+      <input type="text" [(ngModel)]="dados.marca" name="marca" id="marca" required/>
+      <label for="marca" class="active">Marca</label>
+    </div>
+    <div class="input-field col s12 l6">
+      <i class="material-icons prefix">chevron_right</i>
+      <input type="text" [(ngModel)]="dados.ano" name="ano" id="ano" required/>
+      <label for="ano" class="active">Ano</label>
+    </div>
+  </div>
+  <div class="modal-footer row">
+    <div class="col s12 center">
+      <button (click)="onSubmit()" class="btn waves-effect waves-green btn-flat">
+        Editar
+      </button>
+      <button class="btn modal-close waves-effect waves-green btn-flat">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>

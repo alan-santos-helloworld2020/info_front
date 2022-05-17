@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col s12 l6 push-l3">
+    <form (ngSubmit)="onSubmit(modelPost.value)" #modelPost="ngForm">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">chevron_right</i>
+        <input type="text" ngModel required name="placa" id="placa">
+        <label for="placa" class="">Placa</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">chevron_right</i>
+        <input type="text" ngModel required name="chassi" id="chassi">
+        <label for="chassi" class="">Chassi</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">chevron_right</i>
+        <input type="text" ngModel required name="renavam" id="renavam">
+        <label for="renavam" class="">Renavam</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">chevron_right</i>
+        <input type="text" ngModel required name="modelo" id="modelo">
+        <label for="modelo" class="">Modelo</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">chevron_right</i>
+        <input type="text" ngModel required name="marca" id="marca">
+        <label for="marca" class="">Marca</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">chevron_right</i>
+        <input type="text" ngModel required name="ano" id="ano">
+        <label for="ano" class="">Ano</label>
+      </div>
+      <div class="input-field col s12">
+       <button type="submit" class="btn right">
+         salvar
+         <i class="material-icons right">send</i>
+       </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
